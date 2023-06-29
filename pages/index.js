@@ -15,17 +15,26 @@ export default function Home() {
     });
   }, []);
 
-
   const [pickup, setPickup] = useState('');
   const [dropoff, setDropoff] = useState('');
   const [quantity, setQuantity] = useState('');
   const [amount, setAmount] = useState('');
 
-  console.log(pickup)
-
   const handleInputChange = (e, setter) => {
     setter(e.target.value);
   };
+
+  useEffect(() => {
+    // Calculate the amount based on the quantity and price per unit
+    const calculateAmount = () => {
+      // Replace the calculation logic with your own formula
+      const pricePerUnit = 4900; // Replace with the actual price per unit
+      const totalAmount = quantity * pricePerUnit;
+      setAmount(totalAmount);
+    };
+
+    calculateAmount();
+  }, [quantity]);
 
   return (
     <main>
@@ -76,7 +85,7 @@ const Input = tw.input`
   mt-2 p-2 border border-gray-300 rounded
 `;
 const SavedPlaces = tw.div`
-  // Add your styles here
+  // Add styles here
 `;
 const BookNowButton = tw.button`
   mt-4 p-2 bg-blue-500 text-white rounded hover:bg-blue-600 mx-2 my-2 text-2xl cursor-pointer w-full

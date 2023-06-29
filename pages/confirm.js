@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react';
 import tw from 'tailwind-styled-components';
 import Map from './components/Map';
 import { useRouter } from 'next/router';
+import DeliverySelector from './components/deliverySelector';
 
 const Confirm = () => {
-    const router = useRouter()
-    const { pickup, dropoff } = router.query
+    const router = useRouter();
+    const { pickup, dropoff } = router.query;
 
-    console.log("pickup", pickup)
-    console.log("dropoff", dropoff)
+    console.log("pickup", pickup);
+    console.log("dropoff", dropoff);
 
     const [pickupCoordinates, setPickupCoordinates] = useState();
     const [dropoffCoordinates, setDropoffCoordinates] = useState();
@@ -55,16 +56,11 @@ const Confirm = () => {
                 dropoffCoordinates={dropoffCoordinates}
             />
             <ConfirmContainer>
-                {pickupCoordinates && (
-                    <div>
-                        Pickup Coordinates: {pickupCoordinates[0]}, {pickupCoordinates[1]}
-                    </div>
-                )}
-                {dropoffCoordinates && (
-                    <div>
-                        Dropoff Coordinates: {dropoffCoordinates[0]}, {dropoffCoordinates[1]}
-                    </div>
-                )}
+                <DeliverySelector />
+
+                <ConfirmButton>
+                    Confirm Order
+                </ConfirmButton>
             </ConfirmContainer>
         </Wrapper>
     );
@@ -72,10 +68,17 @@ const Confirm = () => {
 
 export default Confirm;
 
+const Delivery = tw.div`
+flex-1 flex flex-col
+`;
+
 const Wrapper = tw.div`
-  flex h-screen flex-col
+  flex flex-col bg-white-900 h-screen
 `;
 
 const ConfirmContainer = tw.div`
-  flex-1 
+  flex-1 flex flex-col
+`;
+const ConfirmButton = tw.div`
+  my-4 mx-4 p-2 bg-blue-500 text-white text-center border-t-4 rounded hover:bg-blue-600 mx-2 my-2 text-2xl cursor-pointer w-full
 `;
