@@ -3,6 +3,7 @@ import tw from 'tailwind-styled-components';
 import Map from './components/Map';
 import { useRouter } from 'next/router';
 import DeliverySelector from './components/deliverySelector';
+import Link from 'next/link';
 
 const Confirm = () => {
     const router = useRouter();
@@ -49,8 +50,15 @@ const Confirm = () => {
         fetchDropoffCoordinates(dropoff);
     }, [pickup, dropoff]);
 
+    const Backbutton = () => (
+        <Link href="/">
+            <Back>Back</Back>
+        </Link>
+    );
+
     return (
         <Wrapper>
+            <Backbutton />
             <Map
                 pickupCoordinates={pickupCoordinates}
                 dropoffCoordinates={dropoffCoordinates}
@@ -58,9 +66,7 @@ const Confirm = () => {
             <ConfirmContainer>
                 <DeliverySelector />
 
-                <ConfirmButton>
-                    Confirm Order
-                </ConfirmButton>
+                <ConfirmButton>Confirm Order</ConfirmButton>
             </ConfirmContainer>
         </Wrapper>
     );
@@ -69,7 +75,7 @@ const Confirm = () => {
 export default Confirm;
 
 const Delivery = tw.div`
-flex-1 flex flex-col
+  flex-1 flex flex-col
 `;
 
 const Wrapper = tw.div`
@@ -81,4 +87,7 @@ const ConfirmContainer = tw.div`
 `;
 const ConfirmButton = tw.div`
   my-4 mx-4 p-2 bg-blue-500 text-white text-center border-t-4 rounded hover:bg-blue-600 mx-2 my-2 text-2xl cursor-pointer w-full
+`;
+const Back = tw.div`
+bg-white text-xl absolute top-4 z-10 px-3 shodow-md cussor-pointer
 `;

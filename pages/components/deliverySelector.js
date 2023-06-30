@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import tw from 'tailwind-styled-components';
-
+import trucks from '../../public/trucks.png';
 
 const DeliverySelector = () => {
   const [quantity, setQuantity] = useState(0);
@@ -21,7 +21,7 @@ const DeliverySelector = () => {
     fetchQuantity();
   }, []);
 
-  useEffect((totalAmount) => {
+  useEffect(() => {
     const calculatePrice = () => {
       const totalPrice = quantity * 4900;
       setPrice(totalPrice);
@@ -34,7 +34,7 @@ const DeliverySelector = () => {
     <Wrapper>
       <Title>Confirm Your Order</Title>
       <Truck>
-        <TruckImage src="./images/trucks.png" />
+        <img src={trucks} alt='trucks' width="100px" height="60" />
         <TruckDetails>
           <Time>10 mins away</Time>
           <Price>Total Amount: N{price}</Price>
@@ -50,25 +50,21 @@ const Truck = tw.div`
   flex-1 flex p-10 items-center
 `;
 
-const TruckImage = tw.img`
-h-30 me-4
-`;
-
 const TruckDetails = tw.div`
-flex-1 flex mx-20
+  flex-1 flex mx-20
 `;
 
 const Time = tw.div`
-text-s text-blue-300`;
+  text-s text-blue-300
+`;
 
 const Price = tw.div`
-text-l text-black-500 mx-20
+  text-l text-black-500 mx-20
 `;
 
 const Title = tw.div`
   text-gray-600 text-center text-xs py-2 border-b
 `;
-
 
 const Wrapper = tw.div`
   flex-1

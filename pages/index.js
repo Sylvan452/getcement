@@ -2,6 +2,10 @@ import { useState, useEffect } from 'react';
 import tw from 'tailwind-styled-components';
 import mapboxgl from 'mapbox-gl';
 import Link from 'next/link';
+import getcement from '../public/getcement_logo.png';
+import { auth } from '@/firebase';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
+import { useRouter } from 'next/router';
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoic3lsdmFuNDUyIiwiYSI6ImNsajQ4ZmszNTFuMGszbG9kancyMnZ4eGIifQ.kV1jHlVekAmurJt91LCpUw';
 
@@ -25,10 +29,8 @@ export default function Home() {
   };
 
   useEffect(() => {
-    // Calculate the amount based on the quantity and price per unit
     const calculateAmount = () => {
-      // Replace the calculation logic with your own formula
-      const pricePerUnit = 4900; // Replace with the actual price per unit
+      const pricePerUnit = 4900;
       const totalAmount = quantity * pricePerUnit;
       setAmount(totalAmount);
     };
@@ -36,12 +38,33 @@ export default function Home() {
     calculateAmount();
   }, [quantity]);
 
+  const [user, setUser] = useState(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    return onAuthStateChanged(auth, user => {
+      if (user) {
+        setUser({
+          name: user.displayName,
+          photoUrl: user.photoURL,
+        });
+      } else {
+        setUser(null);
+        router.push('/login');
+      }
+    });
+  }, []);
+
   return (
     <main>
       <Wrapper>
         <MapContainer id='MapContainer'></MapContainer>
         <LogoContainer>
-          <img src="/images/getcement_logo.png" alt="getcement_logo" width={100} height={40} />
+          <img src={getcement} width="120px" height="50px" alt="getcement_logo" />
+          <Profile>
+            <Name>{user && user.name}</Name>
+            <UserImage src={user && user.photoURL} onClick={() => signOut(auth)} />
+          </Profile>
         </LogoContainer>
         <InputSection>
           <Input placeholder="pickup" value={pickup} onChange={(e) => setPickup(e.target.value)} />
@@ -71,12 +94,15 @@ export default function Home() {
 const Wrapper = tw.div`
   flex flex-col bg-white-90000 h-screen
 `;
+
 const MapContainer = tw.div`
   bg-red-500 flex-1
 `;
+
 const LogoContainer = tw.div`
-  flex justify-left items-center py-2 px-2
+  flex justify-between items-center py-2 px-2
 `;
+
 const InputSection = tw.div`
   flex flex-col items-center
 `;
@@ -84,9 +110,23 @@ const InputSection = tw.div`
 const Input = tw.input`
   mt-2 p-2 border border-gray-300 rounded
 `;
+
 const SavedPlaces = tw.div`
   // Add styles here
 `;
+
 const BookNowButton = tw.button`
   mt-4 p-2 bg-blue-500 text-white rounded hover:bg-blue-600 mx-2 my-2 text-2xl cursor-pointer w-full
+`;
+
+const Profile = tw.div`
+flex items-center
+`;
+
+const Name = tw.div`
+text-l mr-4 w-20
+`;
+
+const UserImage = tw.img`
+h-12 w-12 rounded-full border border-gray-200 p-px cussor-pointer
 `;
