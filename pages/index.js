@@ -3,7 +3,7 @@ import tw from 'tailwind-styled-components';
 import mapboxgl from 'mapbox-gl';
 import Link from 'next/link';
 import getcement from '../public/getcement_logo.png';
-import { auth } from '@/firebase';
+import { auth } from '../firebase';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { useRouter } from 'next/router';
 
