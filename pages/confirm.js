@@ -4,7 +4,6 @@ import Map from './components/Map';
 import { useRouter } from 'next/router';
 import DeliverySelector from './components/deliverySelector';
 import Link from 'next/link';
-import paystackService from './paystackService'; // Import the paystackService
 
 const Confirm = () => {
     const router = useRouter();
@@ -57,21 +56,6 @@ const Confirm = () => {
         </Link>
     );
 
-    const handlePayment = () => {
-        const amount = 5000; // Example amount
-        const email = 'example@example.com'; // Example email
-        const reference = 'unique-reference-id'; // Example reference
-
-        paystackService.initializePayment(amount, email, reference) // Use the imported function here
-            .then((response) => {
-                const { data } = response;
-                window.location.href = data.data.authorization_url;
-            })
-            .catch((error) => {
-                console.error('Paystack error:', error);
-            });
-    };
-
     return (
         <Wrapper>
             <Backbutton />
@@ -81,8 +65,7 @@ const Confirm = () => {
             />
             <ConfirmContainer>
                 <DeliverySelector />
-
-                <ConfirmButton onClick={handlePayment}>Confirm Order</ConfirmButton>
+                <ConfirmButton>Confirm Order</ConfirmButton>
             </ConfirmContainer>
         </Wrapper>
     );
@@ -95,7 +78,7 @@ const Delivery = tw.div`
 `;
 
 const Wrapper = tw.div`
-  flex flex-col bg-white-900 h-screen
+  flex flex-col bg-white h-screen
 `;
 
 const ConfirmContainer = tw.div`
@@ -105,5 +88,5 @@ const ConfirmButton = tw.div`
   my-4 mx-4 p-2 bg-blue-500 text-white text-center border-t-4 rounded hover:bg-blue-600 mx-2 my-2 text-2xl cursor-pointer w-full
 `;
 const Back = tw.div`
-bg-white text-xl absolute top-4 z-10 px-3 shodow-md cussor-pointer
+  bg-white text-xl absolute top-4 z-10 px-3 shadow-md cursor-pointer
 `;
