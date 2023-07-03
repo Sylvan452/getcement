@@ -4,6 +4,7 @@ import Map from './components/Map';
 import { useRouter } from 'next/router';
 import DeliverySelector from './components/deliverySelector';
 import Link from 'next/link';
+import paystackService from './paystackService'; // Import the paystackService
 
 const Confirm = () => {
     const router = useRouter();
@@ -56,6 +57,21 @@ const Confirm = () => {
         </Link>
     );
 
+    const handlePayment = () => {
+        const amount = 5000; // Example amount
+        const email = 'example@example.com'; // Example email
+        const reference = 'unique-reference-id'; // Example reference
+
+        paystackService.initializePayment(amount, email, reference) // Use the imported function here
+            .then((response) => {
+                const { data } = response;
+                window.location.href = data.data.authorization_url;
+            })
+            .catch((error) => {
+                console.error('Paystack error:', error);
+            });
+    };
+
     return (
         <Wrapper>
             <Backbutton />
@@ -66,7 +82,7 @@ const Confirm = () => {
             <ConfirmContainer>
                 <DeliverySelector />
 
-                <ConfirmButton>Confirm Order</ConfirmButton>
+                <ConfirmButton onClick={handlePayment}>Confirm Order</ConfirmButton>
             </ConfirmContainer>
         </Wrapper>
     );
