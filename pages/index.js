@@ -108,7 +108,7 @@ const InputSection = tw.div`
 `;
 
 const Input = tw.input`
-  mt-2 p-2 border border-gray-300 rounded
+  mt-2 p-2 border border-gray-300 rounded text-black
 `;
 
 const SavedPlaces = tw.div`
