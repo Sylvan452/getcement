@@ -53,7 +53,7 @@ const Login = () => {
                 <StyledDiv>
                     <Team>
                         <Title>Our Team</Title>
-                        <Pag>Obah Sylva is a digital marketer, newspaper editor, and a major distributor of Dangote Cement in Nigeria. Tayo Akinrinsoye works in a financial institution and he currently is a loan officer and has always been open to using technology to solve real-life problems.</Pag>
+                        <Pag><b>Obah Sylva</b> is a digital marketer, newspaper editor, and a major distributor of Dangote Cement in Nigeria. <b>Tayo Akinrinsoye</b> works in a financial institution and he currently is a loan officer and has always been open to using technology to solve real-life problems.</Pag>
                     </Team>
                 </StyledDiv>
             </Content>

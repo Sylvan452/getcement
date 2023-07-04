@@ -128,5 +128,5 @@ text-l mr-4 w-20
 `;
 
 const UserImage = tw.img`
-h-12 w-12 rounded-full border border-gray-200 p-px cussor-pointer
+h-12 w-12 rounded-full border-black-200 px-2 cursor-pointer
 `;
