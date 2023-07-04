@@ -1,12 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import tw from 'tailwind-styled-components';
 import getcement from '../public/getcement_logo.png';
 import { useRouter } from 'next/router';
 import { signInWithPopup, onAuthStateChanged } from 'firebase/auth';
 import { auth, provider } from '../firebase';
+import AboutPage from './AboutPage';
 
 const Login = () => {
     const router = useRouter();
+    const [showAboutPage, setShowAboutPage] = useState(false);
 
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
@@ -16,16 +18,24 @@ const Login = () => {
         });
     });
 
+    const handleAboutClick = () => {
+        router.push('/AboutPage');
+    };
+
     return (
         <Wrapper>
             <LogoContainer>
                 <img src={getcement} width="120px" height="50px" alt="getcement_logo" />
-                <SignUpButton onClick={() => signInWithPopup(auth, provider)}>Sign up</SignUpButton>
+                <ButtonContainer>
+                    <SignUpButton onClick={() => signInWithPopup(auth, provider)}>Sign up</SignUpButton>
+                    <AboutButton onClick={handleAboutClick}>About Us</AboutButton>
+
+                </ButtonContainer>
             </LogoContainer>
             <Title>
                 Log in to access your account and get cement cheap and fast!
             </Title>
-            <HeadImage src='https://otutu.com.ng/wp-content/uploads/2022/11/FB-IMG-1668054823305-350x220.jpg' />
+            <HeadImage src='https://images.unsplash.com/photo-1656356283646-a6f6f671f2d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80' />
             <SigninButton onClick={() => signInWithPopup(auth, provider)}>Sign in with Google</SigninButton>
             <Content>
                 <StyledDiv>
@@ -92,4 +102,11 @@ const StyledDiv = tw.div`
 `;
 
 const Pag = tw.div`
+`;
+const AboutButton = tw.div`
+  bg-blue-500 flex text-white text-center py-2 px-2 rounded hover:bg-blue-600 self-center cursor-pointer
+`;
+
+const ButtonContainer = tw.div`
+  flex items-center space-x-2
 `;
