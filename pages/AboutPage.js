@@ -41,7 +41,6 @@ const AboutPage = () => {
             <Link href="https://twitter.com/sylvan452">Twitter</Link>
           </div>
         </Team>
-        <Image src="http://theindustry.ng/wp-content/uploads/2021/09/dangote-cement.png" alt="About Us" />
         <Repo>
           <Link href="https://github.com/Sylvan452/getcement">Project Repository</Link>
         </Repo>
