@@ -31,13 +31,13 @@ const Login = () => {
                 <StyledDiv>
                     <GetCheapCement>
                         <Title>Get Cement Cheap</Title>
-                        <Pag>Looking for ways to get cement fast and cheap? Firstly, consider buying cement in bulk from wholesale suppliers or manufacturers, as they often offer discounted prices for larger quantities. Login and gain access to cheap cement products in Nigeria</Pag>
+                        <Pag>Are you searching for fast and affordable options to procure cement? One effective approach is to consider purchasing cement in bulk from wholesale suppliers or directly from manufacturers. These sources often provide discounted prices for larger quantities, allowing you to save money. Log in to access offer</Pag>
                     </GetCheapCement>
                 </StyledDiv>
                 <StyledDiv>
                     <Driver>
                         <Title>Get a Truck not Shop</Title>
-                        <Pag>Cement distributors play a crucial role in the construction industry by connecting manufacturers with contractors, builders, and individuals in need of cement. We help retailers sell cement faster. Get a TRUCK!</Pag>
+                        <Pag> Cement distributors play a vital role in the construction industry, facilitating the connection between manufacturers and contractors, builders, and individuals seeking cement. Our platform assists retailers in selling cement efficiently. Get your hands on a TRUCK today!</Pag>
                     </Driver>
                 </StyledDiv>
                 <StyledDiv>
