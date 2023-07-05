@@ -51,6 +51,11 @@ const Confirm = () => {
         </Link>
     );
 
+    const handleConfirmOrder = () => {
+        // Redirect to the payment page
+        router.push('/payment');
+    };
+
     return (
         <Wrapper>
             <BackButton />
@@ -60,7 +65,7 @@ const Confirm = () => {
             />
             <ConfirmContainer>
                 <DeliverySelector />
-                <ConfirmButton>Confirm Order</ConfirmButton>
+                <ConfirmButton onClick={handleConfirmOrder}>Confirm Order</ConfirmButton>
             </ConfirmContainer>
         </Wrapper>
     );
