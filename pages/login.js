@@ -26,7 +26,7 @@ const Login = () => {
         const videoId = 'tFBzIZEpHs4';
 
         return (
-            <YouTube videoId={videoId} opts={{ width: '800', height: '450', autoplay: true }} />
+            <YouTube videoId={videoId} opts={{ width: '100%', height: '450', autoplay: true }} />
         );
     };
 
@@ -46,12 +46,13 @@ const Login = () => {
             </Title>
             <HeadImage src='https://media.gettyimages.com/id/478182554/photo/egypt-opens-rafah-border-crossing.jpg?s=612x612&w=gi&k=20&c=zR-0NlZoYhJ0lWefKytGfUURvPOfF_uL-6WStBD__c4=' />
             <SigninButton onClick={() => signInWithPopup(auth, provider)}>Sign in with Google</SigninButton>
-            <Demo>
-                <Title>
-                    <YouTube videoId={'tFBzIZEpHs4'} />
-                </Title>
-            </Demo>
             <Content>
+                <Demo>
+                    <Title>
+                        Demo Video
+                    </Title>
+                    <YouTube videoId={'tFBzIZEpHs4'} />
+                </Demo>
                 <StyledDiv>
 
                     <GetCheapCement>
@@ -79,11 +80,11 @@ const Login = () => {
 export default Login;
 
 const Wrapper = tw.div`
-  flex flex-col bg-gray h-screen
+  flex flex-col bg-gray h-screen md: w-full
 `;
 
 const SigninButton = tw.div`
-  bg-blue-500 text-white text-center py-4 mt-8 self-center w-full cursor-pointer
+  bg-blue-500 text-white text-center py-4 mt-8 self-center w-full cursor-pointer md: w-full
 `;
 
 const LogoContainer = tw.div`
@@ -92,11 +93,13 @@ flex justify-between items-center py-2 px-2`;
 const Title = tw.div`
   text-3xl pt-4 text-gray-500
 `;
+
 const Demo = tw.div`
+flex-1 md: w-'489px'
 `;
 
 const HeadImage = tw.img`
-w-300 h-100
+w-full h-auto md: w-full sm: w-full
 `;
 
 const SignUpButton = tw.div`
@@ -104,15 +107,18 @@ bg-blue-500 flex text-white text-center py-2 px-2 rounded hover:bg-blue-600 self
 `;
 
 const Content = tw.div`
-flex justify-between items-center py-2 px-2`;
+flex flex-row space-y-4 justify-between items-center py-2 px-2 mx-2 md: flex-col sm: flex-col`;
 
 const GetCheapCement = tw.div`
+flex-1
 `;
 
 const Driver = tw.div`
+flex-1
 `;
 
 const Team = tw.div`
+flex-1
 `;
 const StyledDiv = tw.div`
   border border-gray-500 flex-1 p-4
