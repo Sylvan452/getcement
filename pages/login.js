@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import { signInWithPopup, onAuthStateChanged } from 'firebase/auth';
 import { auth, provider } from '../firebase';
 import AboutPage from './AboutPage';
+import YouTube from 'react-youtube';
 
 const Login = () => {
     const router = useRouter();
@@ -21,6 +22,14 @@ const Login = () => {
     const handleAboutClick = () => {
         router.push('/AboutPage');
     };
+    const VideoPlayer = () => {
+        const videoId = 'tFBzIZEpHs4';
+
+        return (
+            <YouTube videoId={videoId} opts={{ width: '800', height: '450', autoplay: true }} />
+        );
+    };
+
 
     return (
         <Wrapper>
@@ -37,8 +46,14 @@ const Login = () => {
             </Title>
             <HeadImage src='https://media.gettyimages.com/id/478182554/photo/egypt-opens-rafah-border-crossing.jpg?s=612x612&w=gi&k=20&c=zR-0NlZoYhJ0lWefKytGfUURvPOfF_uL-6WStBD__c4=' />
             <SigninButton onClick={() => signInWithPopup(auth, provider)}>Sign in with Google</SigninButton>
+            <Demo>
+                <Title>
+                    <YouTube videoId={'tFBzIZEpHs4'} />
+                </Title>
+            </Demo>
             <Content>
                 <StyledDiv>
+
                     <GetCheapCement>
                         <Title>Get Cement Cheap</Title>
                         <Pag>Are you searching for fast and affordable options to procure cement? One effective approach is to consider purchasing cement in bulk from wholesale suppliers or directly from manufacturers. These sources often provide discounted prices for larger quantities, allowing you to save money. Log in to access offer</Pag>
@@ -76,6 +91,8 @@ flex justify-between items-center py-2 px-2`;
 
 const Title = tw.div`
   text-3xl pt-4 text-gray-500
+`;
+const Demo = tw.div`
 `;
 
 const HeadImage = tw.img`
