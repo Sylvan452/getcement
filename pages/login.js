@@ -35,7 +35,7 @@ const Login = () => {
             <Title>
                 Log in to access your account and get cement cheap and fast!
             </Title>
-            <HeadImage src='https://images.unsplash.com/photo-1656356283646-a6f6f671f2d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80' />
+            <HeadImage src='https://media.gettyimages.com/id/478182554/photo/egypt-opens-rafah-border-crossing.jpg?s=612x612&w=gi&k=20&c=zR-0NlZoYhJ0lWefKytGfUURvPOfF_uL-6WStBD__c4=' />
             <SigninButton onClick={() => signInWithPopup(auth, provider)}>Sign in with Google</SigninButton>
             <Content>
                 <StyledDiv>

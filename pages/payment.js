@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { PaystackButton } from 'react-paystack';
 
 const PaymentForm = () => {
@@ -29,7 +29,6 @@ const PaymentForm = () => {
 
     return (
         <div>
-            {/* Display your payment form */}
             <h2>Make Payment</h2>
             <PaystackButton {...paystackOptions} />
         </div>
