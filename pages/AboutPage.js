@@ -35,10 +35,10 @@ const AboutPage = () => {
             <Link href="https://twitter.com/sylvan452">Twitter</Link>
           </div>
           <div>
-            <Image src='https://scontent.fabv2-2.fna.fbcdn.net/v/t39.30808-6/355109051_10230021651188117_6876090353017231622_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEGx-PxIjn3bG-WSY9w0DTfNZilnx1HOHo1mKWfHUc4emV0q44jgxQSvo9OTviqmy4&_nc_ohc=rtcjr2yDIXAAX8ValM3&_nc_zt=23&_nc_ht=scontent.fabv2-2.fna&oh=00_AfCbYdKlm-YSZyDQFHih82YFOI_R-DSHxWzTyikTM4tVJQ&oe=64A9AC59' />
-            <Link href="https://www.linkedin.com/in/obah-sylva-414ab013a/">Linkedin</Link><br />
-            <Link href="https://github.com/Sylvan452">Github</Link><br />
-            <Link href="https://twitter.com/sylvan452">Twitter</Link>
+            <Image src='https://scontent.fabv2-2.fna.fbcdn.net/v/t1.6435-9/30708549_1850323051652734_6611694692939595776_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeEBKmn3KSf9q95tjvjOP2V9sKRthz7O7sawpG2HPs7uxnzPRD6ludYBVsSnt9HdJ5A&_nc_ohc=ioHDSBdpboAAX-d2z3Z&_nc_ht=scontent.fabv2-2.fna&oh=00_AfAIdwR0VsSitP95olkSSUTKDn0pcyDIqmdpnM0Wn46L9g&oe=64CE653D' />
+            <Link href="https://www.linkedin.com/in/tayo-akinrinsoye-06212b69">Linkedin</Link><br />
+            <Link href="https://github.com/tayyoakinrinsoye">Github</Link><br />
+            <Link href="https://twitter.com/teeone22/status/1374752246852894725?s=46&t=KpwAKD6mZRrTv7Hlyqe1Rg">Twitter</Link>
           </div>
         </Team>
         <Repo>
