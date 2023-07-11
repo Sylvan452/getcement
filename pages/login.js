@@ -73,6 +73,8 @@ const Login = () => {
                     </Team>
                 </StyledDiv>
             </Content>
+
+
         </Wrapper>
     );
 };
@@ -80,7 +82,7 @@ const Login = () => {
 export default Login;
 
 const Wrapper = tw.div`
-  flex flex-col bg-gray h-screen md: w-full
+  flex flex-col bg-gray h-screen md: w-full px-2 mx-2
 `;
 
 const SigninButton = tw.div`

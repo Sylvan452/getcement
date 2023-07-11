@@ -29,7 +29,7 @@ const AboutPage = () => {
         <Title>Team</Title>
         <Team>
           <div>
-            <Image src='https://scontent.fabv2-2.fna.fbcdn.net/v/t39.30808-6/355109051_10230021651188117_6876090353017231622_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEGx-PxIjn3bG-WSY9w0DTfNZilnx1HOHo1mKWfHUc4emV0q44jgxQSvo9OTviqmy4&_nc_ohc=rtcjr2yDIXAAX8ValM3&_nc_zt=23&_nc_ht=scontent.fabv2-2.fna&oh=00_AfCbYdKlm-YSZyDQFHih82YFOI_R-DSHxWzTyikTM4tVJQ&oe=64A9AC59' />
+            <Image src='https://scontent.fabv2-2.fna.fbcdn.net/v/t39.30808-6/355109051_10230021651188117_6876090353017231622_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEGx-PxIjn3bG-WSY9w0DTfNZilnx1HOHo1mKWfHUc4emV0q44jgxQSvo9OTviqmy4&_nc_ohc=nZZoFSwBVlsAX9TrSkG&_nc_zt=23&_nc_ht=scontent.fabv2-2.fna&oh=00_AfAFiidYlC3qJkQmcXdR8bpa6xDGdmvy1I3WHn9EYPqIew&oe=64B19559' />
             <Link href="https://www.linkedin.com/in/obah-sylva-414ab013a/">Linkedin</Link><br />
             <Link href="https://github.com/Sylvan452">Github</Link><br />
             <Link href="https://twitter.com/sylvan452">Twitter</Link>
