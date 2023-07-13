@@ -3,8 +3,9 @@
 
 ## Introduction
 Getcement is a mobile application designed to streamline the cement distribution process. It enables users to easily place cement orders, track deliveries, and view transaction history. The app is developed using Next.js ( React framework) and it offers a user-friendly interface. The app was deployed using Vercel.
-
-![Placeholder](./public/Screenshot (30).png)
+ commit 
+ 
+ ![screenshot](<public/Screenshot (30).png>)
 
 ### Deployed site: https://getcement.vercel.app
 
@@ -13,7 +14,7 @@ Final project blog article:  [Solving Nigeria cement distribution challenges wit
 
 **Author LinkedIn:** 
 - [Obah Sylva]( https://www.linkedin.com/in/obah-sylva-414ab013a )
-- [Tayo Akinrinsoye] ( https://www.linkedin.com/in/tayo-akinrinsoye-06212b69 )
+- [Tayo Akinrinsoye]( https://www.linkedin.com/in/tayo-akinrinsoye-06212b69 )
 
 
 ## Installation/ cloning
