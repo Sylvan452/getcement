@@ -2,12 +2,13 @@ import React from 'react';
 import tw from 'tailwind-styled-components';
 import getcement from '../public/getcement_logo.png';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const AboutPage = () => {
   return (
     <Wrapper>
       <LogoContainer>
-        <img src="getcement_logo.png" width="120px" height="50px" alt="getcement_logo" />
+        <Image src="getcement_logo.png" width="120px" height="50px" alt="getcement_logo" />
         <Link href="/">
           <HomeButton>Home</HomeButton>
         </Link>
