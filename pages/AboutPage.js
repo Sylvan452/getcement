@@ -7,7 +7,7 @@ const AboutPage = () => {
   return (
     <Wrapper>
       <LogoContainer>
-        <img src={getcement} width="120px" height="50px" alt="getcement_logo" />
+        <img src="getcement_logo.png" width="120px" height="50px" alt="getcement_logo" />
         <Link href="/">
           <HomeButton>Home</HomeButton>
         </Link>
